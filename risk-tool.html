@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Tool — SoilGuard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="logo-icon">🌿</div>
+      SoilGuard
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="risk-tool.html" class="active">Risk Tool</a></li>
+      <li><a href="survey.html">Survey</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Erosion Risk Assessment</h1>
+    <p>Enter your site details below to calculate erosion risk and get conservation recommendations.</p>
+  </div>
+
+  <!-- FORM BODY -->
+  <div class="page-body">
+    <div class="form-card">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" id="location" placeholder="e.g. Ibadan">
+        </div>
+        <div class="form-group">
+          <label>State / LGA</label>
+          <input type="text" id="state-lga" placeholder="e.g. Oyo / Ibadan North">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Farm Size (ha)</label>
+          <input type="number" id="farm-size" placeholder="e.g. 5" min="0">
+        </div>
+        <div class="form-group">
+          <label>Slope (%)</label>
+          <input type="number" id="slope" placeholder="e.g. 10" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="form-row three">
+        <div class="form-group">
+          <label>Soil Texture</label>
+          <select id="soil-texture">
+            <option value="">Select...</option>
+            <option value="sandy">Sandy</option>
+            <option value="loamy">Loamy</option>
+            <option value="clay">Clay</option>
+            <option value="silty">Silty</option>
+            <option value="sandy-loam">Sandy Loam</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Land Cover</label>
+          <select id="land-cover">
+            <option value="">Select...</option>
+            <option value="bare">Bare Soil</option>
+            <option value="cropland">Cropland</option>
+            <option value="grassland">Grassland</option>
+            <option value="forest">Forest / Woodland</option>
+            <option value="mixed">Mixed Vegetation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Rainfall Intensity</label>
+          <select id="rainfall">
+            <option value="">Select...</option>
+            <option value="low">Low (&lt;400mm/yr)</option>
+            <option value="moderate">Moderate (400–800mm)</option>
+            <option value="high">High (800–1200mm)</option>
+            <option value="very-high">Very High (&gt;1200mm)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <p class="form-section-label">Current Practices</p>
+      <div class="checkbox-group">
+        <label class="checkbox-label"><input type="checkbox" id="p-heavy-tillage"> Heavy tillage</label>
+        <label class="checkbox-label"><input type="checkbox" id="p-min-tillage"> Minimum tillage</label>
+        <label class="checkbox-label"><input type="checkbox" id="p-mulching"> Mulching</label>
+        <label class="checkbox-label"><input type="checkbox" id="p-burning"> Burning</label>
+        <label class="checkbox-label"><input type="checkbox" id="p-residue"> Residue removal</label>
+        <label class="checkbox-label"><input type="checkbox" id="p-cover-crops"> Cover crops</label>
+      </div>
+
+      <div class="form-row single">
+        <div class="form-group">
+          <label>Drainage Condition</label>
+          <select id="drainage">
+            <option value="">Select...</option>
+            <option value="well">Well Drained</option>
+            <option value="moderate">Moderately Drained</option>
+            <option value="poorly">Poorly Drained</option>
+            <option value="waterlogged">Waterlogged</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <button class="btn-calculate" onclick="calculateRisk()">🛡️ Calculate Risk</button>
+    </div>
+
+    <!-- RESULTS SECTION -->
+    <div id="results-section">
+      <div class="results-card">
+        <h2 class="results-title">Your Erosion Risk Report</h2>
+        <div id="risk-badge" class="risk-badge"></div>
+        <div class="risk-score-bar">
+          <div id="risk-fill" class="risk-score-fill" style="width:0%"></div>
+        </div>
+        <p id="risk-summary" class="risk-summary-text"></p>
+        <h3 class="results-section-title">🌿 Conservation Recommendations</h3>
+        <div id="recommendations"></div>
+        <h3 class="results-section-title">⚠️ Risk Factors Identified</h3>
+        <div id="risk-factors"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SoilGuard</h3>
+        <p>Soil Erosion Risk Mapping &amp; Conservation Recommender.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Disclaimer</h4>
+        <p>Results are advisory only. Always consult local agricultural experts for site-specific decisions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>info@soilguard.example.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 SoilGuard. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey — SoilGuard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="logo-icon">🌿</div>
+      SoilGuard
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="risk-tool.html">Risk Tool</a></li>
+      <li><a href="survey.html" class="active">Survey</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Help Us Improve (Audience Survey)</h1>
+    <p>Share your background so we can make SoilGuard better for everyone.</p>
+  </div>
+
+  <!-- SURVEY BODY -->
+  <div class="page-body">
+    <div class="form-card">
+
+      <div id="survey-success" class="success-banner">
+        ✅ Thank you! Your survey has been submitted successfully.
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="s-name" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <!-- intentional spacer -->
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input type="email" id="s-email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel" id="s-phone" placeholder="+234...">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Occupation *</label>
+          <select id="s-occupation">
+            <option value="">Select...</option>
+            <option>Farmer</option>
+            <option>Agricultural Officer</option>
+            <option>Student</option>
+            <option>Researcher</option>
+            <option>NGO / Development Worker</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Organization / School (optional)</label>
+          <input type="text" id="s-org" placeholder="e.g. University of Ibadan">
+        </div>
+      </div>
+
+      <div class="form-row single">
+        <div class="form-group">
+          <label>State / Country *</label>
+          <input type="text" id="s-state" placeholder="e.g. Oyo State, Nigeria">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Purpose of Use *</label>
+          <select id="s-purpose">
+            <option value="">Select...</option>
+            <option>Personal Use</option>
+            <option>Academic Research</option>
+            <option>Farm Management</option>
+            <option>Government / Policy</option>
+            <option>NGO Work</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Experience Level *</label>
+          <select id="s-experience">
+            <option value="">Select...</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+            <option>Expert</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <p class="form-section-label">Interested Topics</p>
+      <div class="topics-grid">
+        <label class="checkbox-label"><input type="checkbox"> Erosion mapping</label>
+        <label class="checkbox-label"><input type="checkbox"> GIS</label>
+        <label class="checkbox-label"><input type="checkbox"> Conservation farming</label>
+        <label class="checkbox-label"><input type="checkbox"> Climate-smart agriculture</label>
+        <label class="checkbox-label"><input type="checkbox"> Soil health</label>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <p class="form-section-label">Would you like to receive updates? *</p>
+      <div class="radio-group">
+        <label class="radio-label"><input type="radio" name="updates" value="yes"> Yes</label>
+        <label class="radio-label"><input type="radio" name="updates" value="no"> No</label>
+      </div>
+
+      <label class="checkbox-label consent-box">
+        <input type="checkbox" id="s-consent">
+        I agree my data can be used for research and improvement. *
+      </label>
+
+      <button class="btn-calculate" onclick="submitSurvey()">Submit Survey</button>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SoilGuard</h3>
+        <p>Soil Erosion Risk Mapping &amp; Conservation Recommender.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Disclaimer</h4>
+        <p>Results are advisory only. Always consult local agricultural experts for site-specific decisions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>info@soilguard.example.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 SoilGuard. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
