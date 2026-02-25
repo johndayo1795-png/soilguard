@@ -6,10 +6,18 @@
   <title>Risk Tool — SoilGuard</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGLE ANALYTICS — Replace G-XXXXXXXXXX with your real ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <a class="nav-logo" href="index.html">
       <div class="logo-icon">🌿</div>
@@ -22,16 +30,38 @@
     </ul>
   </nav>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <h1>Erosion Risk Assessment</h1>
     <p>Enter your site details below to calculate erosion risk and get conservation recommendations.</p>
   </div>
 
-  <!-- FORM BODY -->
   <div class="page-body">
     <div class="form-card">
 
+      <!-- ============================================================
+           RISK TOOL FORM
+           When user clicks "Calculate Risk", their details + result
+           are automatically emailed to: johndayo1795@gmail.com
+           ============================================================ -->
+
+      <!-- Hidden Formspree form — collects and emails the data -->
+      <form id="risk-data-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="display:none;">
+        <input type="hidden" name="_subject" value="🛡️ New SoilGuard Risk Assessment Submitted">
+        <input type="hidden" id="hid-location"    name="Location">
+        <input type="hidden" id="hid-state"       name="State / LGA">
+        <input type="hidden" id="hid-farm-size"   name="Farm Size (ha)">
+        <input type="hidden" id="hid-slope"       name="Slope (%)">
+        <input type="hidden" id="hid-soil"        name="Soil Texture">
+        <input type="hidden" id="hid-cover"       name="Land Cover">
+        <input type="hidden" id="hid-rainfall"    name="Rainfall Intensity">
+        <input type="hidden" id="hid-drainage"    name="Drainage Condition">
+        <input type="hidden" id="hid-practices"   name="Current Practices">
+        <input type="hidden" id="hid-risk-level"  name="Risk Level">
+        <input type="hidden" id="hid-risk-score"  name="Risk Score">
+        <input type="hidden" id="hid-recs"        name="Recommendations">
+      </form>
+
+      <!-- Visible form inputs -->
       <div class="form-row">
         <div class="form-group">
           <label>Location</label>
@@ -115,11 +145,10 @@
       </div>
 
       <div class="form-divider"></div>
-
       <button class="btn-calculate" onclick="calculateRisk()">🛡️ Calculate Risk</button>
     </div>
 
-    <!-- RESULTS SECTION -->
+    <!-- RESULTS -->
     <div id="results-section">
       <div class="results-card">
         <h2 class="results-title">Your Erosion Risk Report</h2>
@@ -137,7 +166,6 @@
 
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -150,7 +178,7 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>info@soilguard.example.com</p>
+        <p>johndayo1795@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">© 2026 SoilGuard. All rights reserved.</div>
