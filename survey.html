@@ -6,18 +6,10 @@
   <title>Survey — SoilGuard</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <!-- GOOGLE ANALYTICS — Replace G-XXXXXXXXXX with your real ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
 </head>
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
     <a class="nav-logo" href="index.html">
       <div class="logo-icon">🌿</div>
@@ -30,130 +22,121 @@
     </ul>
   </nav>
 
+  <!-- PAGE HEADER -->
   <div class="page-header">
     <h1>Help Us Improve (Audience Survey)</h1>
     <p>Share your background so we can make SoilGuard better for everyone.</p>
   </div>
 
+  <!-- SURVEY BODY -->
   <div class="page-body">
     <div class="form-card">
 
       <div id="survey-success" class="success-banner">
-        ✅ Thank you! Your survey has been submitted successfully. We will be in touch!
+        ✅ Thank you! Your survey has been submitted successfully.
       </div>
 
-      <!-- ============================================================
-           FORMSPREE FORM
-           Submissions go to: johndayo1795@gmail.com
-           ACTION: Send this email address to Formspree during setup.
-           See SETUP-GUIDE.html for exact steps.
-           ============================================================ -->
-      <form id="survey-form" action="https://formspree.io/f/meelnobq" method="POST">
-
-        <!-- Hidden field: tells you which form this came from -->
-        <input type="hidden" name="_subject" value="📋 New SoilGuard Survey Submission">
-        <input type="hidden" name="_replyto" value="johndayo1795@gmail.com">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" name="Full Name" id="s-name" placeholder="Your full name" required>
-          </div>
-          <div class="form-group"></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="s-name" placeholder="Your full name">
         </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email (optional)</label>
-            <input type="email" name="Email" id="s-email" placeholder="email@example.com">
-          </div>
-          <div class="form-group">
-            <label>Phone (optional)</label>
-            <input type="tel" name="Phone" id="s-phone" placeholder="+234...">
-          </div>
+        <div class="form-group">
+          <!-- intentional spacer -->
         </div>
+      </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Occupation *</label>
-            <select name="Occupation" id="s-occupation" required>
-              <option value="">Select...</option>
-              <option>Farmer</option>
-              <option>Agricultural Officer</option>
-              <option>Student</option>
-              <option>Researcher</option>
-              <option>NGO / Development Worker</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Organization / School (optional)</label>
-            <input type="text" name="Organization" id="s-org" placeholder="e.g. University of Ibadan">
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input type="email" id="s-email" placeholder="email@example.com">
         </div>
-
-        <div class="form-row single">
-          <div class="form-group">
-            <label>State / Country *</label>
-            <input type="text" name="State / Country" id="s-state" placeholder="e.g. Oyo State, Nigeria" required>
-          </div>
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel" id="s-phone" placeholder="+234...">
         </div>
+      </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Purpose of Use *</label>
-            <select name="Purpose of Use" id="s-purpose" required>
-              <option value="">Select...</option>
-              <option>Personal Use</option>
-              <option>Academic Research</option>
-              <option>Farm Management</option>
-              <option>Government / Policy</option>
-              <option>NGO Work</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Experience Level *</label>
-            <select name="Experience Level" id="s-experience" required>
-              <option value="">Select...</option>
-              <option>Beginner</option>
-              <option>Intermediate</option>
-              <option>Advanced</option>
-              <option>Expert</option>
-            </select>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Occupation *</label>
+          <select id="s-occupation">
+            <option value="">Select...</option>
+            <option>Farmer</option>
+            <option>Agricultural Officer</option>
+            <option>Student</option>
+            <option>Researcher</option>
+            <option>NGO / Development Worker</option>
+            <option>Other</option>
+          </select>
         </div>
-
-        <div class="form-divider"></div>
-
-        <p class="form-section-label">Interested Topics</p>
-        <div class="topics-grid">
-          <label class="checkbox-label"><input type="checkbox" name="Topic: Erosion mapping" value="Yes"> Erosion mapping</label>
-          <label class="checkbox-label"><input type="checkbox" name="Topic: GIS" value="Yes"> GIS</label>
-          <label class="checkbox-label"><input type="checkbox" name="Topic: Conservation farming" value="Yes"> Conservation farming</label>
-          <label class="checkbox-label"><input type="checkbox" name="Topic: Climate-smart agriculture" value="Yes"> Climate-smart agriculture</label>
-          <label class="checkbox-label"><input type="checkbox" name="Topic: Soil health" value="Yes"> Soil health</label>
+        <div class="form-group">
+          <label>Organization / School (optional)</label>
+          <input type="text" id="s-org" placeholder="e.g. University of Ibadan">
         </div>
+      </div>
 
-        <div class="form-divider"></div>
-
-        <p class="form-section-label">Would you like to receive updates? *</p>
-        <div class="radio-group">
-          <label class="radio-label"><input type="radio" name="Receive Updates" value="Yes" required> Yes</label>
-          <label class="radio-label"><input type="radio" name="Receive Updates" value="No"> No</label>
+      <div class="form-row single">
+        <div class="form-group">
+          <label>State / Country *</label>
+          <input type="text" id="s-state" placeholder="e.g. Oyo State, Nigeria">
         </div>
+      </div>
 
-        <label class="checkbox-label consent-box">
-          <input type="checkbox" id="s-consent" required>
-          I agree my data can be used for research and improvement. *
-        </label>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Purpose of Use *</label>
+          <select id="s-purpose">
+            <option value="">Select...</option>
+            <option>Personal Use</option>
+            <option>Academic Research</option>
+            <option>Farm Management</option>
+            <option>Government / Policy</option>
+            <option>NGO Work</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Experience Level *</label>
+          <select id="s-experience">
+            <option value="">Select...</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+            <option>Expert</option>
+          </select>
+        </div>
+      </div>
 
-        <button type="submit" class="btn-calculate">Submit Survey</button>
+      <div class="form-divider"></div>
 
-      </form>
+      <p class="form-section-label">Interested Topics</p>
+      <div class="topics-grid">
+        <label class="checkbox-label"><input type="checkbox"> Erosion mapping</label>
+        <label class="checkbox-label"><input type="checkbox"> GIS</label>
+        <label class="checkbox-label"><input type="checkbox"> Conservation farming</label>
+        <label class="checkbox-label"><input type="checkbox"> Climate-smart agriculture</label>
+        <label class="checkbox-label"><input type="checkbox"> Soil health</label>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <p class="form-section-label">Would you like to receive updates? *</p>
+      <div class="radio-group">
+        <label class="radio-label"><input type="radio" name="updates" value="yes"> Yes</label>
+        <label class="radio-label"><input type="radio" name="updates" value="no"> No</label>
+      </div>
+
+      <label class="checkbox-label consent-box">
+        <input type="checkbox" id="s-consent">
+        I agree my data can be used for research and improvement. *
+      </label>
+
+      <button class="btn-calculate" onclick="submitSurvey()">Submit Survey</button>
 
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -166,7 +149,12 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6aca9aea8a2a7bfa9f7f1fff386a1aba7afaae8a5a9ab">[email&#160;protected]</a></p>
+        <p>info@soilguard.example.com</p>
       </div>
     </div>
-    <div class="f
+    <div class="footer-bottom">© 2026 SoilGuard. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
