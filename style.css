@@ -723,3 +723,72 @@ footer {
   .form-card,
   .results-card   { padding: 24px 18px; }
 }
+
+/* ── HAMBURGER BUTTON (hidden on desktop) ── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--forest);
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+/* ── MOBILE DROPDOWN MENU ── */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--white);
+  border-bottom: 2px solid rgba(45,80,22,0.1);
+  padding: 8px 0;
+  position: sticky;
+  top: 62px;
+  z-index: 99;
+  box-shadow: 0 4px 12px rgba(45,80,22,0.08);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 14px 6%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45,80,22,0.06);
+  transition: background 0.2s, color 0.2s;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.mob-active {
+  background: rgba(45,80,22,0.05);
+  color: var(--forest);
+  font-weight: 600;
+}
+
+/* ── RESPONSIVE: Switch to hamburger on mobile ── */
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .form-row,
+  .form-row.three { grid-template-columns: 1fr; }
+  .checkbox-group { grid-template-columns: 1fr 1fr; }
+  .topics-grid    { grid-template-columns: 1fr; }
+  .footer-grid    { grid-template-columns: 1fr; gap: 24px; }
+  .form-card,
+  .results-card   { padding: 24px 18px; }
+  .hero           { padding: 60px 5% 52px; }
+  .hero h1        { font-size: 2rem; }
+}
