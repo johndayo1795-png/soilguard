@@ -6,10 +6,17 @@
   <title>SoilGuard — Soil Erosion Risk Mapping & Conservation Recommender</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- GOOGLE ANALYTICS — Replace G-XXXXXXXXXX with your real ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <a class="nav-logo" href="index.html">
       <div class="logo-icon">🌿</div>
@@ -20,39 +27,43 @@
       <li><a href="risk-tool.html">Risk Tool</a></li>
       <li><a href="survey.html">Survey</a></li>
     </ul>
+    <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
   </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mob-active">Home</a>
+    <a href="risk-tool.html">Risk Tool</a>
+    <a href="survey.html">Survey</a>
+  </div>
 
-  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-eyebrow">🇳🇬 Serving Nigerian Farmers</span>
+      <span class="hero-eyebrow">&#127475;&#127468; Serving Nigerian Farmers</span>
       <h1>Soil Erosion Risk Mapping<br>&amp; <em>Conservation Recommender</em></h1>
       <p>Check erosion risk and get practical conservation actions in minutes. Protect your farmland before it's too late.</p>
       <div class="hero-btns">
-        <a class="btn-primary" href="risk-tool.html">Check Risk →</a>
+        <a class="btn-primary" href="risk-tool.html">Check Risk &#8594;</a>
         <a class="btn-outline" href="survey.html">Take Survey</a>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section class="how-it-works">
     <h2 class="section-title">How It Works</h2>
     <div class="steps-grid">
       <div class="step-card">
-        <div class="step-icon">📋</div>
+        <div class="step-icon">&#128203;</div>
         <div class="step-label">Step 1</div>
         <h3>Enter Site Info</h3>
         <p>Provide slope, soil type, land cover, and your current farming practices.</p>
       </div>
       <div class="step-card">
-        <div class="step-icon">🛡️</div>
+        <div class="step-icon">&#128737;&#65039;</div>
         <div class="step-label">Step 2</div>
         <h3>Get Risk Level</h3>
         <p>Our model calculates Low, Medium, or High erosion risk based on your inputs.</p>
       </div>
       <div class="step-card">
-        <div class="step-icon">💡</div>
+        <div class="step-icon">&#128161;</div>
         <div class="step-label">Step 3</div>
         <h3>See Recommendations</h3>
         <p>Receive tailored, practical conservation actions for your specific site.</p>
@@ -60,29 +71,27 @@
     </div>
   </section>
 
-  <!-- KEY FEATURES -->
   <section class="key-features">
     <h2 class="section-title">Key Features</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <span class="feature-icon">🛡️</span>
+        <span class="feature-icon">&#128737;&#65039;</span>
         <h3>Risk Assessment</h3>
         <p>Score-based erosion risk evaluation using key land and climate factors including slope, soil texture, rainfall intensity, and drainage conditions.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">🌿</span>
+        <span class="feature-icon">&#127807;</span>
         <h3>Conservation Recommendations</h3>
         <p>Practical, context-specific soil conservation actions you can take today — tailored to your farm's unique characteristics.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">📊</span>
+        <span class="feature-icon">&#128202;</span>
         <h3>Data Collection &amp; Insights</h3>
         <p>Help improve the tool by sharing your experience through our audience survey. Your input makes SoilGuard smarter for everyone.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY PREVENTION MATTERS -->
   <section class="why-prevention">
     <h2 class="section-title">Why Prevention Matters</h2>
     <ul class="prevention-list">
@@ -93,7 +102,6 @@
     </ul>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -106,12 +114,17 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>info@soilguard.example.com</p>
+        <p>johndayo1795@gmail.com</p>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 SoilGuard. All rights reserved.</div>
+    <div class="footer-bottom">&#169; 2026 SoilGuard. All rights reserved.</div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
