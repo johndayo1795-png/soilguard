@@ -6,7 +6,6 @@
   <title>Survey — SoilGuard</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
   <!-- GOOGLE ANALYTICS — Replace G-XXXXXXXXXX with your real ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -20,7 +19,7 @@
 
   <nav>
     <a class="nav-logo" href="index.html">
-      <div class="logo-icon">🌿</div>
+      <div class="logo-icon">&#127807;</div>
       SoilGuard
     </a>
     <ul class="nav-links">
@@ -28,7 +27,13 @@
       <li><a href="risk-tool.html">Risk Tool</a></li>
       <li><a href="survey.html" class="active">Survey</a></li>
     </ul>
+    <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
   </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="risk-tool.html">Risk Tool</a>
+    <a href="survey.html" class="mob-active">Survey</a>
+  </div>
 
   <div class="page-header">
     <h1>Help Us Improve (Audience Survey)</h1>
@@ -39,20 +44,11 @@
     <div class="form-card">
 
       <div id="survey-success" class="success-banner">
-        ✅ Thank you! Your survey has been submitted successfully. We will be in touch!
+        &#9989; Thank you! Your survey has been submitted successfully. We will be in touch!
       </div>
 
-      <!-- ============================================================
-           FORMSPREE FORM
-           Submissions go to: johndayo1795@gmail.com
-           ACTION: Send this email address to Formspree during setup.
-           See SETUP-GUIDE.html for exact steps.
-           ============================================================ -->
       <form id="survey-form" action="https://formspree.io/f/meelnobq" method="POST">
-
-        <!-- Hidden field: tells you which form this came from -->
-        <input type="hidden" name="_subject" value="📋 New SoilGuard Survey Submission">
-        <input type="hidden" name="_replyto" value="johndayo1795@gmail.com">
+        <input type="hidden" name="_subject" value="&#128203; New SoilGuard Survey Submission">
 
         <div class="form-row">
           <div class="form-group">
@@ -61,7 +57,6 @@
           </div>
           <div class="form-group"></div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label>Email (optional)</label>
@@ -72,7 +67,6 @@
             <input type="tel" name="Phone" id="s-phone" placeholder="+234...">
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label>Occupation *</label>
@@ -91,14 +85,12 @@
             <input type="text" name="Organization" id="s-org" placeholder="e.g. University of Ibadan">
           </div>
         </div>
-
         <div class="form-row single">
           <div class="form-group">
             <label>State / Country *</label>
             <input type="text" name="State / Country" id="s-state" placeholder="e.g. Oyo State, Nigeria" required>
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label>Purpose of Use *</label>
@@ -124,7 +116,6 @@
         </div>
 
         <div class="form-divider"></div>
-
         <p class="form-section-label">Interested Topics</p>
         <div class="topics-grid">
           <label class="checkbox-label"><input type="checkbox" name="Topic: Erosion mapping" value="Yes"> Erosion mapping</label>
@@ -135,7 +126,6 @@
         </div>
 
         <div class="form-divider"></div>
-
         <p class="form-section-label">Would you like to receive updates? *</p>
         <div class="radio-group">
           <label class="radio-label"><input type="radio" name="Receive Updates" value="Yes" required> Yes</label>
@@ -148,7 +138,6 @@
         </label>
 
         <button type="submit" class="btn-calculate">Submit Survey</button>
-
       </form>
 
     </div>
@@ -166,7 +155,17 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6aca9aea8a2a7bfa9f7f1fff386a1aba7afaae8a5a9ab">[email&#160;protected]</a></p>
+        <p>johndayo1795@gmail.com</p>
       </div>
     </div>
-    <div class="f
+    <div class="footer-bottom">&#169; 2026 SoilGuard. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
