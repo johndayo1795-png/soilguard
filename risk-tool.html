@@ -6,13 +6,20 @@
   <title>Risk Tool — SoilGuard</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- GOOGLE ANALYTICS — Replace G-XXXXXXXXXX with your real ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <a class="nav-logo" href="index.html">
-      <div class="logo-icon">🌿</div>
+      <div class="logo-icon">&#127807;</div>
       SoilGuard
     </a>
     <ul class="nav-links">
@@ -20,17 +27,37 @@
       <li><a href="risk-tool.html" class="active">Risk Tool</a></li>
       <li><a href="survey.html">Survey</a></li>
     </ul>
+    <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
   </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="risk-tool.html" class="mob-active">Risk Tool</a>
+    <a href="survey.html">Survey</a>
+  </div>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <h1>Erosion Risk Assessment</h1>
     <p>Enter your site details below to calculate erosion risk and get conservation recommendations.</p>
   </div>
 
-  <!-- FORM BODY -->
   <div class="page-body">
     <div class="form-card">
+
+      <form id="risk-data-form" action="https://formspree.io/f/meelnobq" method="POST" style="display:none;">
+        <input type="hidden" name="_subject" value="&#128737;&#65039; New SoilGuard Risk Assessment Submitted">
+        <input type="hidden" id="hid-location"   name="Location">
+        <input type="hidden" id="hid-state"      name="State / LGA">
+        <input type="hidden" id="hid-farm-size"  name="Farm Size (ha)">
+        <input type="hidden" id="hid-slope"      name="Slope (%)">
+        <input type="hidden" id="hid-soil"       name="Soil Texture">
+        <input type="hidden" id="hid-cover"      name="Land Cover">
+        <input type="hidden" id="hid-rainfall"   name="Rainfall Intensity">
+        <input type="hidden" id="hid-drainage"   name="Drainage Condition">
+        <input type="hidden" id="hid-practices"  name="Current Practices">
+        <input type="hidden" id="hid-risk-level" name="Risk Level">
+        <input type="hidden" id="hid-risk-score" name="Risk Score">
+        <input type="hidden" id="hid-recs"       name="Recommendations">
+      </form>
 
       <div class="form-row">
         <div class="form-group">
@@ -42,7 +69,6 @@
           <input type="text" id="state-lga" placeholder="e.g. Oyo / Ibadan North">
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label>Farm Size (ha)</label>
@@ -53,7 +79,6 @@
           <input type="number" id="slope" placeholder="e.g. 10" min="0" max="100">
         </div>
       </div>
-
       <div class="form-row three">
         <div class="form-group">
           <label>Soil Texture</label>
@@ -82,15 +107,14 @@
           <select id="rainfall">
             <option value="">Select...</option>
             <option value="low">Low (&lt;400mm/yr)</option>
-            <option value="moderate">Moderate (400–800mm)</option>
-            <option value="high">High (800–1200mm)</option>
+            <option value="moderate">Moderate (400-800mm)</option>
+            <option value="high">High (800-1200mm)</option>
             <option value="very-high">Very High (&gt;1200mm)</option>
           </select>
         </div>
       </div>
 
       <div class="form-divider"></div>
-
       <p class="form-section-label">Current Practices</p>
       <div class="checkbox-group">
         <label class="checkbox-label"><input type="checkbox" id="p-heavy-tillage"> Heavy tillage</label>
@@ -115,11 +139,9 @@
       </div>
 
       <div class="form-divider"></div>
-
-      <button class="btn-calculate" onclick="calculateRisk()">🛡️ Calculate Risk</button>
+      <button class="btn-calculate" onclick="calculateRisk()">&#128737;&#65039; Calculate Risk</button>
     </div>
 
-    <!-- RESULTS SECTION -->
     <div id="results-section">
       <div class="results-card">
         <h2 class="results-title">Your Erosion Risk Report</h2>
@@ -128,16 +150,14 @@
           <div id="risk-fill" class="risk-score-fill" style="width:0%"></div>
         </div>
         <p id="risk-summary" class="risk-summary-text"></p>
-        <h3 class="results-section-title">🌿 Conservation Recommendations</h3>
+        <h3 class="results-section-title">&#127807; Conservation Recommendations</h3>
         <div id="recommendations"></div>
-        <h3 class="results-section-title">⚠️ Risk Factors Identified</h3>
+        <h3 class="results-section-title">&#9888;&#65039; Risk Factors Identified</h3>
         <div id="risk-factors"></div>
       </div>
     </div>
-
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -150,12 +170,17 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>info@soilguard.example.com</p>
+        <p>johndayo1795@gmail.com</p>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 SoilGuard. All rights reserved.</div>
+    <div class="footer-bottom">&#169; 2026 SoilGuard. All rights reserved.</div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
